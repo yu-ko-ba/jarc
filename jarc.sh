@@ -2,7 +2,6 @@
 
 javac *.java
 
-without_extension=$(basename ${1})
-echo "Main-Class: ${without_extension%.*}" > manifest.mf
+echo "Main-Class: ${1%.*}" > manifest.mf
 
 jar -cvfm ${1} manifest.mf *.class
